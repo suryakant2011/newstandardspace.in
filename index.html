@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Standard Space - Educational Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header>
+    <div class="header-content">
+      <h1>New StandardS pace</h1>
+      <nav>
+        <ul>
+         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="hero">
+        <h2>Discover the Universe with New Standard Space</h2>
+        <p>
+        <p style="color:green">Green</p> Enrich your knowledge with our wide range of educational courses in astronomy, astrophysics, and space exploration.</p>
+        <a href="#courses" class="cta-button">Explore Courses</a>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="course-list">
+        <div class="course">
+          <h3>Astronomy Basics</h3>
+          <p>Learn the fundamental concepts of astronomy and explore the wonders of the night sky.</p>
+          <a href="#" class="course-button">Enroll Now</a>
+        </div>
+        <div class="course">
+          <h3>Astrophysics Masterclass</h3>
+          <p>Dive deep into the fascinating world of astrophysics and study the secrets of the universe.</p>
+          <a href="#" class="course-button">Enroll Now</a>
+        </div>
+        <!-- Add more courses here -->
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About New Standard Space</h2>
+      <p>New Standard Space is a leading educational platform dedicated to providing high-quality and engaging content about space and astronomy. Our mission is to inspire curiosity and foster a deeper understanding of the cosmos.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or inquiries, feel free to reach out to our team.</p>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <input type="number" placeholder="Phone Number" required>
+       
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+<style>
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: # Black;
+}
+
+header {
+  background-color: #orange;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+.hero {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #444;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.course {
+  width: 30%;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.course h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.course p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.course-button {
+  display: inline-block;
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.course-button:hover {
+  background-color: #444;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  font-size: 1rem;
+}
+</style>
+<script>
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
+
+ Form submission event listener
+const form = document.querySelector('form');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = form.querySelector('input[type="text"]').value;
+  const email = form.querySelector('input[type="email"]').value;
+  const message = form.querySelector('textarea').value;
+  const mobileNumber = form.querySelector('input[type="Number"]').value;
+
+  // Display summary report after form submission
+  const summaryReport = `
+    <h3>Form Submission Summary:</h3>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Message:</strong> ${message}</p>
+    <p><strong>Mobile Number:</strong> ${mobileNumber}</p>
+    <p><strong>Your Dout success sumbit to our team thank you for visiting in our website.:</strong> ${name}</p>
+  `;
+
+  const summaryContainer = document.createElement('div');
+  summaryContainer.innerHTML = summaryReport;
+
+  const contactSection = document.getElementById('contact');
+  contactSection.appendChild(summaryContainer);
+
+  // Optionally, you can reset the form after submission
+  form.reset();
+});
+</script>
